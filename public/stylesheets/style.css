@@ -1,0 +1,16 @@
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+.logo {
+    text-align: center;
+    padding: 3rem 0;
+    background: #F4F6FF 0 0 no-repeat padding-box;
+    box-shadow: 0 2px 6px #21393629;
+    opacity: 1;
+}
+
+#fretboard-img {
+    position: relative;
+    margin: 100px;
+}

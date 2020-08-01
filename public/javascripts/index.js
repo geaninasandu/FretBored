@@ -1,5 +1,7 @@
-let imageWidth = document.getElementById('fretboard-img').offsetWidth;
-let imageHeight = document.getElementById('fretboard-img').offsetHeight;
+let fretboardDiv = document.getElementById('fretboard');
+let image = document.getElementById('fretboard-img');
+let imageWidth = image.offsetWidth;
+let imageHeight = image.offsetHeight;
 
 function getCoordinates(event) {
     const x = event.clientX - document.getElementById("fretboard-img").offsetLeft;
@@ -28,5 +30,42 @@ function findNote(event) {
         return note.topX <= x && note.bottomX >= x && note.topY <= y && note.bottomY >= y;
     });
 
-    console.log(foundNote);
+    return foundNote;
 }
+
+function createButton(note) {
+    let noteButton = document.createElement('button');
+    noteButton.innerHTML = note.note;
+
+    noteButton.classList.add('note-button');
+    noteButton.style.backgroundColor = note.color;
+    noteButton.style.height = noteButton.style.width = imageHeight / 6 + 'px';
+    noteButton.style.left = 100 + note.topX + 'px';
+    noteButton.style.top = fretboardDiv.getBoundingClientRect().top + note.topY - 2 + 'px';
+
+    return noteButton;
+}
+
+function showNote(event) {
+    const note = findNote(event);
+    if (!note) {
+        return;
+    }
+
+    if (fretboardDiv.lastChild != image) {
+        if (fretboardDiv.lastChild.innerHTML === note.note) {
+            return;
+        }
+
+        removeChildren();
+    }
+
+    fretboardDiv.appendChild(createButton(note));
+}
+
+function removeChildren() {
+    while (fretboardDiv.lastChild != image) {
+        fretboardDiv.removeChild(fretboardDiv.lastChild);
+    }
+}
+

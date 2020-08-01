@@ -1,5 +1,5 @@
 body {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .logo {
@@ -13,4 +13,18 @@ body {
 #fretboard-img {
     position: relative;
     margin: 100px;
+    display: block;
+}
+
+.note-button {
+    position: absolute;
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 1vw;
+    border-radius: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

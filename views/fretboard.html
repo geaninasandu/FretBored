@@ -5,6 +5,9 @@
         <link rel="stylesheet" href="/stylesheets/style.css">
 
         <link href="https://fonts.googleapis.com/css2?family=Nunito:ital@1&display=swap" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
@@ -15,14 +18,13 @@
             <img class="col-lg-4" id="logo-img" src="/images/logo.png" alt="logo.png">
         </div>
 
-        <div class="fretboard">
-            <img id="fretboard-img" src="/images/fretboard.svg" alt="fretboard.png" onmousemove="findNote(event)"/>
+        <div id="fretboard">
+            <img id="fretboard-img" src="/images/fretboard.svg" alt="fretboard.png" onmousemove="showNote(event)" onmouseleave=""/>
         </div>
 
         <script src="/javascripts/index.js"></script>
         <script src="/javascripts/constants.js"></script>
         <script src="/javascripts/notes.js"></script>
-
     </body>
 
 </html>

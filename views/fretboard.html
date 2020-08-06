@@ -1,30 +1,65 @@
 <html>
 
-    <head>
-        <title>FretBored</title>
-        <link rel="stylesheet" href="/stylesheets/style.css">
+<head>
+    <title>FretBored</title>
 
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
 
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    </head>
+    <link rel="stylesheet" href="/fontawesome/css/fontawesome.css">
+    <link href="/fontawesome/css/brands.css" rel="stylesheet">
+    <link href="/fontawesome/css/solid.css" rel="stylesheet">
 
-    <body onresize="updateImageSize()">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
 
-        <div class="logo">
-            <img class="col-lg-4" id="logo-img" src="/images/logo.png" alt="logo.png">
+
+<body onresize="updateImageSize()" onload="showOpenNotes()">
+
+<div class="logo">
+    <img class="col-lg-4" id="logo-img" src="/images/logo.png" alt="logo.png">
+</div>
+
+<div id="fretboard">
+    <img id="fretboard-img" src="/images/fretboard.svg" alt="fretboard.svg" onmousemove="showNote(event)"/>
+</div>
+
+<div id="info">
+        <div class="instructions-container row col-4">
+
+
+
+            <div id="instructions">
+
+                <div class="row">
+                    <img class="pick" src="images/pick.svg" alt="pick.svg"/>
+                    <p class="instruction">Place your cursor on top of a string to reveal the note.</p>
+
+                </div>
+
+                <div class="row">
+                    <img class="pick" src="images/pick.svg" alt="pick.svg"/>
+                    <p class="instruction">Click on the string to hear the sound.</p>
+                </div>
+
+                <div class="row">
+                    <img class="pick" src="images/pick.svg" alt="pick.svg"/>
+                    <p class="instruction">Select a scale to show the underlying notes.</p>
+                </div>
+
+            </div>
+
+            <i class="fas fa-times close-instructions"></i>
+
+
         </div>
+</div>
 
-        <div id="fretboard">
-            <img id="fretboard-img" src="/images/fretboard.svg" alt="fretboard.png" onmousemove="showNote(event)" onmouseleave=""/>
-        </div>
-
-        <script src="/javascripts/index.js"></script>
-        <script src="/javascripts/constants.js"></script>
-        <script src="/javascripts/notes.js"></script>
-    </body>
+<script src="/javascripts/index.js"></script>
+<script src="/javascripts/constants.js"></script>
+<script src="/javascripts/notes.js"></script>
+</body>
 
 </html>

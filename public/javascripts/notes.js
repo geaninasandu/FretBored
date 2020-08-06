@@ -12,6 +12,7 @@ class Note {
         this.bottomX = Math.floor((fretCoordinates[fret] + imageHeight / 6) * imageWidth / 1000);
         this.bottomY = Math.floor((stringCoordinates[string] + imageHeight / 8) * imageHeight / 120);
         this.color = color;
+        this.sound = note + octave + '.mp3';
     }
 }
 

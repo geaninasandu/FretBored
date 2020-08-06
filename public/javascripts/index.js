@@ -21,7 +21,7 @@ function showNote(event) {
         return;
     }
 
-    if (fretboardDiv.lastChild != image) {
+    if (fretboardDiv.lastChild !== image) {
         if (fretboardDiv.lastChild.innerHTML === note.note) {
             return;
         }
@@ -43,16 +43,17 @@ function findNote(event) {
     const x = getCoordinates(event)[0];
     const y = getCoordinates(event)[1];
 
-    const foundNote = fretboardNotes.find(function (note) {
+    return fretboardNotes.find(function (note) {
         return note.topX <= x && note.bottomX >= x && note.topY <= y && note.bottomY >= y;
     });
-
-    return foundNote;
 }
 
 function createButton(note) {
     let noteButton = document.createElement('button');
     noteButton.innerHTML = note.note;
+    noteButton.addEventListener('click', function() {
+        new Audio('/sounds/' + note.sound).play().then(r => console.log(r));
+    });
 
     noteButton.classList.add('note-button');
     noteButton.style.backgroundColor = note.color;
@@ -78,7 +79,7 @@ function updateImageSize() {
 }
 
 function removeChildren() {
-    while (fretboardDiv.lastChild != image) {
+    while (fretboardDiv.lastChild !== image) {
         fretboardDiv.removeChild(fretboardDiv.lastChild);
     }
 }

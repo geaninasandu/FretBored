@@ -41,7 +41,7 @@ body {
 
 #info {
     position: relative;
-    margin: 50px;
+    margin: 100px;
 }
 
 .instructions-container {
@@ -71,6 +71,6 @@ body {
 
 .info-img {
     position: relative;
-    height: 175px;
+    height: 130px;
     margin-right: 20px;
 }

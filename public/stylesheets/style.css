@@ -62,7 +62,7 @@ button:hover {
 
 #info-img {
     position: relative;
-    height: 130px;
+    height: 8vw;
     margin-right: 20px;
 }
 
@@ -70,24 +70,23 @@ button:hover {
     background: #F4F6FF 0 0 no-repeat padding-box;
     box-shadow: 0 3px 6px #00000029;
     border-radius: 25px;
+    height: 8vw;
 }
 
 #instructions {
-    margin: 3px 10px;
-    padding: 25px 45px 25px 15px;
+    margin: auto 10px;
+    padding: 1.3vw 2.3vw 1.3vw 1.8vw;
 }
 
 .instruction {
-    height: 36px;
-    font-size: 20px;
+    font-size: 1.2vw;
     text-align: left;
     color: #707070;
-    margin: 3px;
+    margin: 0.25vw;
 }
 
 .pick {
-    width: 38px;
-    height: 30px;
+    width: 1.2vw;
     margin: 3px 15px;
 }
 
@@ -96,7 +95,7 @@ button:hover {
 
 #close-button, #question-mark-btn {
     position: relative;
-    font-size: 20px;
+    font-size: 1vw;
     color: #86D1D3;
     top: 0;
 }

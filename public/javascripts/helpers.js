@@ -19,21 +19,6 @@ function applyCoordinates(note) {
 }
 
 /**
- * Update the image width and height and recalculate the note buttons coordinates upon image resize;
- */
-function updateImageSize() {
-    imageWidth = image.offsetWidth;
-    imageHeight = image.offsetHeight;
-
-    fretboardNotes.forEach(applyCoordinates);
-    openNotes.forEach(applyCoordinates);
-
-    removeChildren();
-    removeOpenNotes();
-    showOpenNotes();
-}
-
-/**
  * Create a button for the selected note;
  */
 function createButton(note) {
@@ -67,5 +52,11 @@ function removeChildren() {
 function removeOpenNotes() {
     while (fretboardDiv.firstChild !== image) {
         fretboardDiv.removeChild(fretboardDiv.firstChild);
+    }
+}
+
+function removeFretNumbers() {
+    while (fretNumbersDiv.firstChild) {
+        fretNumbersDiv.removeChild(fretNumbersDiv.firstChild);
     }
 }

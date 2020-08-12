@@ -15,17 +15,17 @@
     </head>
 
 
-    <body onresize="updateImageSize()" onload="showOpenNotes()">
+    <body onload="updateImageSize()" onresize="updateImageSize()">
 
         <div id="logo">
             <img class="col-4" id="logo-img" src="/images/logo.png" alt="logo.png"/>
         </div>
 
+        <div id="fret-numbers"></div>
 
         <div id="fretboard">
             <img id="fretboard-img" src="/images/fretboard.svg" alt="fretboard.svg" onmousemove="showNote(event)"/>
         </div>
-
 
         <div id="information" class="col-8">
             <div id="question-mark">
@@ -60,12 +60,11 @@
             </div>
         </div>
 
-        <script defer src="https://friconix.com/cdn/friconix.js"></script>
         <script src="/javascripts/index.js"></script>
         <script src="/javascripts/helpers.js"></script>
         <script src="/javascripts/constants.js"></script>
         <script src="/javascripts/notes.js"></script>
-
+        <script defer src="https://friconix.com/cdn/friconix.js"></script>
     </body>
 
 </html>

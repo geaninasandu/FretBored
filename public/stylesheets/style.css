@@ -2,7 +2,10 @@ body {
     font-family: 'Varela Round', sans-serif;
 }
 
-.logo {
+
+/* Logo */
+
+#logo {
     text-align: center;
     padding: 3rem 0;
     background: #F4F6FF 0 0 no-repeat padding-box;
@@ -10,11 +13,17 @@ body {
     opacity: 1;
 }
 
+
+/* Fretboard */
+
 #fretboard-img {
     position: relative;
     margin: 100px 100px 50px 130px;
     display: block;
 }
+
+
+/* Buttons */
 
 .note-button {
     position: absolute;
@@ -30,27 +39,40 @@ body {
     align-items: center;
 }
 
-.note-button:active, .note-button:focus {
+button:active, button:focus {
     -webkit-filter: brightness(92%);
-    outline: none;
+    outline: 0;
 }
 
-.note-button:hover {
+button:hover {
     -webkit-filter: brightness(105%);
 }
 
-#info {
+
+/* Instructions */
+
+#information {
     position: relative;
-    margin: 100px;
+    margin: 50px 100px 0 100px;
 }
 
-.instructions-container {
+#info {
+    margin-top: -30px;
+}
+
+#info-img {
+    position: relative;
+    height: 130px;
+    margin-right: 20px;
+}
+
+#instructions-container {
     background: #F4F6FF 0 0 no-repeat padding-box;
     box-shadow: 0 3px 6px #00000029;
     border-radius: 25px;
 }
 
-.instructions {
+#instructions {
     margin: 3px 10px;
     padding: 25px 45px 25px 15px;
 }
@@ -69,8 +91,20 @@ body {
     margin: 3px 15px;
 }
 
-.info-img {
+
+/* Info buttons */
+
+#close-button, #question-mark-btn {
     position: relative;
-    height: 130px;
-    margin-right: 20px;
+    font-size: 20px;
+    color: #86D1D3;
+    top: 0;
+}
+
+#question-mark {
+    visibility: hidden;
+}
+
+.fi-cwluxl-times-solid, .fi-cwlux2-question-mark {
+    margin: 0 5px;
 }

@@ -1,21 +1,21 @@
-const fretboardNotes = [];
-const openNotes = [];
-
 class Note {
     constructor(note, octave, string, fret, color) {
         this.note = note;
-        this.octave = octave;
         this.string = string;
         this.fret = fret;
-        this.topX = Math.floor(fretCoordinates[fret] * imageWidth / 1000);
-        this.topY = Math.floor(stringCoordinates[string] * imageHeight / 120);
-        this.bottomX = Math.floor((fretCoordinates[fret] + imageHeight / 6) * imageWidth / 1000);
-        this.bottomY = Math.floor((stringCoordinates[string] + imageHeight / 8) * imageHeight / 120);
         this.color = color;
         this.sound = note + octave + '.mp3';
+
+        applyCoordinates(this);
     }
 }
 
+/**
+ * Add the notes to the array of fretboard notes;
+ * @param string        the current string;
+ * @param firstNote     the first note on the string;
+ * @param octave        the octave of the first note;
+ */
 function pushNotes(string, firstNote, octave) {
     let index = musicalNotes.indexOf(firstNote);
 
@@ -30,6 +30,9 @@ function pushNotes(string, firstNote, octave) {
     }
 }
 
+/**
+ * Push the open notes to the array;
+ */
 function pushOpenNotes() {
     openNotes.push(new Note("E", 4, 1, 0, buttonColors[musicalNotes.indexOf("E")]));
     openNotes.push(new Note("B", 3, 2, 0, buttonColors[musicalNotes.indexOf("B")]));
@@ -39,7 +42,7 @@ function pushOpenNotes() {
     openNotes.push(new Note("E", 2, 6, 0, buttonColors[musicalNotes.indexOf("E")]));
 }
 
-function buildNoteSequence() {
+function buildNotesArray() {
     pushOpenNotes();
 
     pushNotes(1, "F", 4);
@@ -50,4 +53,4 @@ function buildNoteSequence() {
     pushNotes(6, "F", 2);
 }
 
-buildNoteSequence();
+buildNotesArray();

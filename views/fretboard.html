@@ -1,52 +1,71 @@
-<html>
+<html lang="en">
 
-<head>
-    <title>FretBored</title>
+    <head>
+        <title>FretBored</title>
 
-    <link rel="icon" href="/images/favicon.ico">
+        <link rel="icon" href="/images/favicon.ico">
 
-    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+              crossorigin="anonymous">
 
-    <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
+        <link rel="stylesheet" href="/stylesheets/style.css">
+    </head>
 
 
-<body onresize="updateImageSize()" onload="showOpenNotes()">
+    <body onresize="updateImageSize()" onload="showOpenNotes()">
 
-<div class="logo">
-    <img class="col-lg-4" id="logo-img" src="/images/logo.png" alt="logo.png">
-</div>
+        <div id="logo">
+            <img class="col-4" id="logo-img" src="/images/logo.png" alt="logo.png"/>
+        </div>
 
-<div id="fretboard">
-    <img id="fretboard-img" src="/images/fretboard.svg" alt="fretboard.svg" onmousemove="showNote(event)"/>
-</div>
 
-<div id="info" class="row">
+        <div id="fretboard">
+            <img id="fretboard-img" src="/images/fretboard.svg" alt="fretboard.svg" onmousemove="showNote(event)"/>
+        </div>
 
-    <img class="info-img" src="/images/illustration.svg">
 
-    <div class="instructions-container">
-        <div class="instructions">
-            <div class="row">
-                <img class="pick" src="images/pick.svg" alt="pick.svg"/>
-                <p class="instruction">Place your cursor on top of a string to reveal the note.</p>
+        <div id="information" class="col-8">
+            <div id="question-mark">
+                <button class="btn" id="question-mark-btn" onclick="toggleInfoPanel()">
+                    <i class="fi-cwlux2-question-mark"></i>
+                    How to use the app?
+                </button>
             </div>
 
-            <div class="row">
-                <img class="pick" src="images/pick.svg" alt="pick.svg"/>
-                <p class="instruction">Click on the string to hear the sound.</p>
+            <div id="info" class="row">
+                <img id="info-img" src="/images/illustration.svg" alt="info"/>
+
+                <div id="instructions-container">
+                    <div id="instructions">
+                        <div class="row">
+                            <img class="pick" src="images/pick.svg" alt="pick.svg"/>
+                            <p class="instruction">Place your cursor on top of a string to reveal the note.</p>
+                        </div>
+
+                        <div class="row">
+                            <img class="pick" src="images/pick.svg" alt="pick.svg"/>
+                            <p class="instruction">Click on the string to hear the sound.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <button id="close-button" class="btn" onclick="toggleInfoPanel()" title="Close">
+                        <i class="fi-cwluxl-times-solid"></i>
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
 
-</div>
+        <script defer src="https://friconix.com/cdn/friconix.js"></script>
+        <script src="/javascripts/index.js"></script>
+        <script src="/javascripts/helpers.js"></script>
+        <script src="/javascripts/constants.js"></script>
+        <script src="/javascripts/notes.js"></script>
 
-<script src="/javascripts/index.js"></script>
-<script src="/javascripts/constants.js"></script>
-<script src="/javascripts/notes.js"></script>
-</body>
+    </body>
 
 </html>

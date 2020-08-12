@@ -1,20 +1,25 @@
-let fretboardDiv = document.getElementById('fretboard');
-let image = document.getElementById('fretboard-img');
+const fretboardDiv = document.getElementById('fretboard');
+const image = document.getElementById('fretboard-img');
 let imageWidth = image.offsetWidth;
 let imageHeight = image.offsetHeight;
-let body = document.getElementsByTagName('body')[0];
 
+/**
+ * Create buttons and display the six open notes on the left of the fretboard;
+ */
 function showOpenNotes() {
-    openNotes.forEach(function(note) {
-        let noteButton = createButton(note);
+    openNotes.forEach(function (note) {
+        const noteButton = createButton(note);
 
         noteButton.style.height = noteButton.style.width = imageHeight / 7 + 'px';
         noteButton.style.margin = 2 + 'px';
 
-        body.appendChild(noteButton);
+        fretboardDiv.insertBefore(noteButton, fretboardDiv.firstChild);
     });
 }
 
+/**
+ * Display the button that corresponds to the hovered note;
+ */
 function showNote(event) {
     const note = findNote(event);
     if (!note) {
@@ -32,13 +37,9 @@ function showNote(event) {
     fretboardDiv.appendChild(createButton(note));
 }
 
-function getCoordinates(event) {
-    const x = event.clientX - document.getElementById("fretboard-img").offsetLeft;
-    const y = event.clientY - document.getElementById("fretboard-img").offsetTop;
-
-    return [x, y];
-}
-
+/**
+ * Return the note that fits within the cursor coordinates;
+ */
 function findNote(event) {
     const x = getCoordinates(event)[0];
     const y = getCoordinates(event)[1];
@@ -48,39 +49,19 @@ function findNote(event) {
     });
 }
 
-function createButton(note) {
-    let noteButton = document.createElement('button');
-    noteButton.innerHTML = note.note;
-    noteButton.addEventListener('click', function() {
-        new Audio('/sounds/' + note.sound).play().then(r => console.log(r));
-    });
+/**
+ * Toggle the visibility of the info panel and the question mark div;
+ */
+function toggleInfoPanel() {
+    const infoPanel = document.getElementById("info");
+    const questionMark = document.getElementById("question-mark");
 
-    noteButton.classList.add('note-button');
-    noteButton.style.backgroundColor = note.color;
-    noteButton.style.height = noteButton.style.width = imageHeight / 6 + 'px';
-    noteButton.style.left = 130 + note.topX + 'px';
-    noteButton.style.top = fretboardDiv.getBoundingClientRect().top + note.topY + 'px';
-
-    return noteButton;
-}
-
-function updateImageSize() {
-    imageWidth = document.getElementById('fretboard-img').offsetWidth;
-    imageHeight = document.getElementById('fretboard-img').offsetHeight;
-
-    fretboardNotes.forEach(function (note) {
-        note.topX = Math.floor(fretCoordinates[note.fret] * imageWidth / 1000);
-        note.topY = Math.floor(stringCoordinates[note.string] * imageHeight / 120);
-        note.bottomX = Math.floor((fretCoordinates[note.fret] + imageHeight / 6) * imageWidth / 1000);
-        note.bottomY = Math.floor((stringCoordinates[note.string] + imageHeight / 8) * imageHeight / 120);
-    });
-
-    removeChildren();
-}
-
-function removeChildren() {
-    while (fretboardDiv.lastChild !== image) {
-        fretboardDiv.removeChild(fretboardDiv.lastChild);
+    if (infoPanel.style.visibility === "hidden") {
+        infoPanel.style.visibility = "visible";
+        questionMark.style.visibility = "hidden";
+        return;
     }
-}
 
+    infoPanel.style.visibility = "hidden";
+    questionMark.style.visibility = "visible";
+}

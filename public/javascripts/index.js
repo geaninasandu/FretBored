@@ -72,17 +72,7 @@ function findNote(event) {
  * Toggle the visibility of the info panel and the question mark div;
  */
 function toggleInfoPanel() {
-    const infoPanel = document.getElementById("info");
-    const questionMark = document.getElementById("question-mark");
-
-    if (infoPanel.style.visibility === "hidden") {
-        infoPanel.style.visibility = "visible";
-        questionMark.style.visibility = "hidden";
-        return;
-    }
-
-    infoPanel.style.visibility = "hidden";
-    questionMark.style.visibility = "visible";
+    $('#info').slideToggle();
 }
 
 function showFretNumbers() {
@@ -90,8 +80,7 @@ function showFretNumbers() {
         let fretNumber = document.createElement('label');
 
         fretNumber.innerHTML = i;
-        fretNumber.style.position = "absolute";
-        fretNumber.style.fontSize = 1 + "vw";
+        fretNumber.className = "fret-number";
         fretNumber.style.left = 130 + (fretCoordinates[i] * imageWidth) / 1000 + 5 + 'px';
         fretNumber.style.top = fretboardDiv.getBoundingClientRect().top - 36 + 'px';
 

@@ -7,7 +7,7 @@ body {
 
 #logo {
     text-align: center;
-    padding: 3rem 0;
+    padding: 2.5vw 0;
     background: #F4F6FF 0 0 no-repeat padding-box;
     box-shadow: 0 2px 6px #21393629;
     opacity: 1;
@@ -18,8 +18,14 @@ body {
 
 #fretboard-img {
     position: relative;
-    margin: 100px 100px 50px 130px;
+    margin: 5vw 5vw 2.5vw 130px;
     display: block;
+}
+
+.fret-number {
+    position: absolute;
+    color: #707070;
+    font-size: 1vw;
 }
 
 
@@ -53,29 +59,29 @@ button:hover {
 
 #information {
     position: relative;
-    margin: 50px 100px 0 100px;
+    margin: 2.5vw 5vw 0 5vw;
 }
 
 #info {
-    margin-top: -30px;
+    margin: 1vw;
 }
 
 #info-img {
     position: relative;
     height: 8vw;
-    margin-right: 20px;
+    margin-right: 1vw;
 }
 
 #instructions-container {
     background: #F4F6FF 0 0 no-repeat padding-box;
-    box-shadow: 0 3px 6px #00000029;
+    box-shadow: 0 0.15vw 0.25vw #00000029;
     border-radius: 25px;
     height: 8vw;
 }
 
 #instructions {
-    margin: auto 10px;
-    padding: 1.3vw 2.3vw 1.3vw 1.8vw;
+    margin: auto 0.5vw;
+    padding: 1.5vw 2vw 1vw 1.5vw;
 }
 
 .instruction {
@@ -87,23 +93,19 @@ button:hover {
 
 .pick {
     width: 1.2vw;
-    margin: 3px 15px;
+    margin: 0.15vw 0.75vw;
 }
 
 
 /* Info buttons */
 
-#close-button, #question-mark-btn {
+#question-mark-btn {
     position: relative;
+    top: 0;
     font-size: 1vw;
     color: #86D1D3;
-    top: 0;
 }
 
-#question-mark {
-    visibility: hidden;
-}
-
-.fi-cwluxl-times-solid, .fi-cwlux2-question-mark {
-    margin: 0 5px;
+.fi-cwlux2-question-mark {
+    margin: 0 0.25vw;
 }

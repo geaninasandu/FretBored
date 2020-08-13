@@ -47,7 +47,7 @@ function removeChildren() {
 }
 
 /**
- * Remove the buttons corresponding to the open notes;
+ * Remove the buttons corresponding to the open strings;
  */
 function removeOpenNotes() {
     while (fretboardDiv.firstChild !== image) {
@@ -55,6 +55,9 @@ function removeOpenNotes() {
     }
 }
 
+/**
+ * Remove the labels containing the fret numbers;
+ */
 function removeFretNumbers() {
     while (fretNumbersDiv.firstChild) {
         fretNumbersDiv.removeChild(fretNumbersDiv.firstChild);

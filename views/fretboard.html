@@ -3,6 +3,8 @@
     <head>
         <title>FretBored</title>
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
         <link rel="icon" href="/images/favicon.ico">
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap">
@@ -18,7 +20,7 @@
     <body onload="updateImageSize()" onresize="updateImageSize()">
 
         <div id="logo">
-            <img class="col-4" id="logo-img" src="/images/logo.png" alt="logo.png"/>
+            <img class="col-4" id="logo-img" src="/images/logo.svg" alt="logo.png"/>
         </div>
 
         <div id="fret-numbers"></div>
@@ -28,6 +30,7 @@
         </div>
 
         <div id="information" class="col-8">
+
             <div id="question-mark">
                 <button class="btn" id="question-mark-btn" onclick="toggleInfoPanel()">
                     <i class="fi-cwlux2-question-mark"></i>
@@ -51,20 +54,16 @@
                         </div>
                     </div>
                 </div>
-
-                <div>
-                    <button id="close-button" class="btn" onclick="toggleInfoPanel()" title="Close">
-                        <i class="fi-cwluxl-times-solid"></i>
-                    </button>
-                </div>
             </div>
+
         </div>
 
+        <script defer src="https://friconix.com/cdn/friconix.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="/javascripts/index.js"></script>
         <script src="/javascripts/helpers.js"></script>
         <script src="/javascripts/constants.js"></script>
         <script src="/javascripts/notes.js"></script>
-        <script defer src="https://friconix.com/cdn/friconix.js"></script>
     </body>
 
 </html>
